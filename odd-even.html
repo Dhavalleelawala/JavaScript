@@ -1,0 +1,25 @@
+<h1>Find Number is odd or even</h1>
+
+Enter Number: <input type="text" id="data"> <br/><br/>
+<button onclick="return checkData()">check</button>
+
+<h2 id="result"></h2>
+<script>
+  function checkData(){
+    var data = parseInt(document.getElementById("data").value);
+    if(data==null || data==""){
+      console.log("no data");
+    }
+    else{
+      // console.log(data);
+      if(data%2==0){
+        // console.log("Even");
+        document.getElementById("result").innerHTML = "Number "+data+" is even";
+      }
+      else{
+        // console.log("odd");
+        document.getElementById("result").innerHTML = "Number "+data+" is odd";
+      }
+    }
+  }
+</script>

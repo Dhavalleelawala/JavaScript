@@ -1,0 +1,28 @@
+<script>
+  //anonymous function
+  // What Are Anonymous Functions? 
+  // An anonymous function is a function that is not stored in a program file, but is associated with a variable whose data type is function_handle . Anonymous functions can accept multiple inputs and return one output. They can contain only a single executable statement.
+
+  var i = prompt("Enter number: ");
+
+  // var ans = ((no)=>{
+  //   return no*no;
+  // })(i); 
+  // console.log(ans);
+
+  var odd = ((num) =>{
+    if(num%2==1){
+      return 1;
+    }else{
+      return 0;
+    }
+  })(i);
+
+  if(odd){
+    console.log("number is odd");
+  }
+  else{
+    console.log("Number is even");
+  }
+
+</script>

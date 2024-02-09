@@ -1,0 +1,68 @@
+<script>
+  // function getdata(){
+  //   var a=10;
+  //   var b=20;
+  //   console.log("ans="+(a+b));
+  // }
+
+  // getdata();
+
+  // getdata();
+  
+  // var r=5;
+  //   function circle(){
+  //     var area = 3.14*r*r;
+  //     console.log("area of circle: "+area);
+  //   }
+
+  //   circle();
+  //   var a=5;
+  //   function cube(){
+  //     var ans=a*a*a;
+  //     console.log("cube of"+a+" = "+ans);
+  //   }
+
+  //   cube();
+
+  //   function factorial(){
+  //     var num=5;
+  //     var fact=1;
+  //     for(var i=1;i<=num;i++){
+  //       fact=fact*i;
+  //     }
+  //     console.log("factorial="+fact);
+  //   }
+
+  //   factorial();
+
+  //   var num = prompt("Enter number: ");
+  //   function factors(){
+  //     for(var i=1;i<=num;i++){
+  //       if(num%i==0){
+  //         console.log(i);
+  //       }
+  //     }
+  //   }
+  //   factors();
+
+  // prime number
+  var prime = () =>{
+    var num =5;
+    var count=0;
+    for(var i=1;i<=num;i++){
+      if(num%i==0){
+        count++;
+        if(count>=3)
+          break;
+      }
+    }
+    if(count==2){
+        console.log("No is prime.");
+      }
+      else{
+        console.log("No is not prime.");
+      }
+    // return 0;
+  }
+  prime();
+</script>

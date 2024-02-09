@@ -1,0 +1,19 @@
+<script>
+  //inner function ke andar se global varibale ki value change kar sakte hai
+  //alag alag scope varibale same hoge tabhi clouser work karta hai
+
+    var a=10;
+
+    function outer(){
+       a=5;
+      function inner(){
+        a=3;
+        console.log("inner a is: "+a);
+      }
+      inner();
+      console.log("outer a is: "+a);
+    }
+
+    outer();
+    console.log("globle a is: "+a);
+</script>

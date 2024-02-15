@@ -1,0 +1,100 @@
+
+<section class="background">
+  <div class="stud-form">
+    <table border="0" cellpadding="10" cellspacing="5" >
+      <caption>Student DATA CRUD</caption>
+      <tbody>
+        <tr>
+          <td>
+            <label>Roll No</label>
+          </td>
+          <td>
+            <input type="text" id="rollno">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Name</label>
+          </td>
+          <td>
+            <input type="text" id="name">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>age</label>
+          </td>
+          <td>
+            <input type="text" id="age">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="submit" onclick="return addData()">Submit</button>
+          </td>
+          <td>
+           
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="showData"></div>
+</section>
+
+<script>
+  var studDB = [];
+  
+   function addData()
+   {
+    var rollno = document.getElementById("rollno").value;
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value; 
+    var std={
+      rollno:rollno,
+      name:name,
+      age:age
+    }
+
+    studDB.push(std);
+    document.getElementById('rollno').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('age').value = '';
+
+    viewRecord();
+    console.log(studDB.rollno);
+   }
+
+   function viewRecord()
+   {
+      var data = "<table border='1' cellpadding='5'><tr><td>Rollno</td><td>Name</td><td>age</td><td>Delete</td><td>Edit</td></tr>";
+      studDB.map((v,i)=>{
+        data += `<tr>`;
+        data += `<td>${v.rollno}</td>`;
+        data += `<td>${v.name}</td>`;
+        data += `<td>${v.age}</td>`;
+        data += `<td><button id="delete" onclick="return deleteData()">Delete</button></td>`;
+        data += `<td><button id="delete" onclick="return editData()">Edit</button></td>`;
+        data += "</tr>";
+      });
+      document.getElementById('showData').innerHTML = data;
+      console.log("hello");
+   }
+
+   function deleteData(i)
+   {
+      if(confirm("Ary you sure delete data?"))
+      {
+        studDB.splice(i,1);
+        viewRecord();
+      }
+   }
+   function editData()
+    {
+      var r = studDB[rollno];
+      console.log(r);
+    }
+   
+   
+</script>
+

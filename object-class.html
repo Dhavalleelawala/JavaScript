@@ -1,0 +1,25 @@
+<script>
+  class Pen{
+    putdata()
+    {
+      this.name = "Parker";
+      this.price = 20;
+      this.quantity = 5;
+    }
+    cal()
+    {
+      this.total= this.price*this.quantity;
+    }
+    getdata()
+    {
+      console.log("Pen name: "+this.name);
+      console.log("Price: "+this.price);
+      console.log("Quantity: "+this.total);
+    }
+  }
+
+  var p = new Pen();
+  p.putdata();
+  p.cal();
+  p.getdata();
+</script>

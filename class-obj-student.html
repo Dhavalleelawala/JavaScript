@@ -1,0 +1,24 @@
+<script>
+  class Student{
+    putdata(r,n,a)
+    {
+      this.rollNo = r;
+      this.name = n;
+      this.average = a;
+    }
+    getdata()
+    {
+      console.log("Roll No : "+this.rollNo);
+      console.log("Student Name: "+this.name);
+      console.log("Average: "+this.average);
+    }
+  }
+
+
+  var s = new Student();
+
+  s.putdata(21,"Krishna",67);
+  s.getdata();
+
+
+</script>

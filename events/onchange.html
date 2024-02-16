@@ -1,0 +1,17 @@
+<select id="select" onchange="return getCityName()">
+  <option value="">--select city--</option>
+  <option value="Surat">Surat</option>
+  <option value="Rajkot">Rajkot</option>
+  <option value="Baroda">Baroda</option>
+  <option value="Ahmadabad">Ahmadabad</option>
+</select>
+
+<h1 id="res"></h1>
+<script>
+
+  function getCityName(){
+    //var city = document.getElementById('select').value;
+    document.getElementById('res').innerHTML = document.getElementById('select').value;;
+  }
+
+</script>

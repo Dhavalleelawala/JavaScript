@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.btn-top{
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  background-color: aquamarine;
+  display: inline-block;
+  padding: 15px;
+  border:2px solid green;
+  text-decoration: none;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.ri-arrow-up-line{
+  color: black;
+  font-size: 26px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+  <section class="background">
+    <div class="calc">
+      <input type="text" id="result">
+
+      <div class="btn">
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button> <br>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button> <br>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button> <br>
+
+        <button>0</button>
+        <button>.</button>
+        <button>c</button>
+        <button>=</button> <br>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+<script>
+
+  let res = document.getElementById('result');
+  let btn = document.querySelectorAll('button');
+  let cha = ['+', '-', '/', '*'];
+  for (var i = 0; i <= btn.length; i++) {
+    btn[i].addEventListener('click', function () {
+      let last = res.value[res.value.length - 1];
+      if (this.innerHTML == '=') {
+        res.value = eval(res.value);
+      }
+      else if(this.innerHTML == 'c'){
+        res.value = '';
+      }
+      else if (cha.includes(last)) {
+        if (cha.includes(this.innerHTML)) {
+          res.value = res.value;
+        }
+        else {
+          res.value = res.value + this.innerHTML;
+        }
+      }
+      else {
+        res.value = res.value + this.innerHTML;
+      }
+    });
+  }
+
+</script>
+
+</html>

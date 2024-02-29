@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="double-quotes.png" type="png/icon">
+  <title>Quote of the day</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  
+  <div class="quote-card">
+    <div class="timer"></div>
+    <h2>Quote of the day</h2>
+    <blockquote id="quote">Lodding...</blockquote>
+    <span id="author">Lodding...</span>
+    <div class="btn-quote">
+      <button onclick="return newQuote()">New Quote</button>
+    </div>   
+  </div>
+
+<script>
+
+  const quote = document.querySelector("#quote");
+  const author = document.querySelector("#author");
+  const api_url = "https://api.quotable.io/quotes/random";
+  var timer = document.querySelector('.timer');
+  var t1;
+  var t2;
+  async function getquote(url){
+    const response = await fetch(url);
+    var data = await response.json();
+    
+    quote.innerHTML = data[0].content;
+    author.innerHTML = data[0].author;
+    
+  }
+
+  var i=1;
+  var time;
+  setInterval(()=>{
+    if(i==11){
+      i=1;
+    }
+    if(i<10){
+      timer.innerHTML = "0"+i+":00";
+    }
+    else{
+      timer.innerHTML = i+":00";
+    }
+    if(i==1){
+    t1=setInterval(()=>{
+    getquote(api_url);
+    },timer);
+    if(i==10) clearInterval(t1);
+    }  
+    i++;  
+  },1000);
+
+  getquote(api_url);
+
+  function newQuote(){
+    i=1;
+    getquote(api_url);
+    clearInterval(t1);
+  }  
+ console.log();
+</script>
+</body>
+</html>

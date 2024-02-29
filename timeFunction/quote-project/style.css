@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body{
+  background-color: #6ee2f7;
+}
+.quote-card{
+  width:700px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  padding: 40px;
+}
+
+.quote-card h2{
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.quote-card h2::after{
+  content: '';
+  width:100px;
+  height: 3px;
+  background-color: #177ce5;
+  position: absolute;
+  bottom: -10px;
+  left:50%;
+  transform: translate(-50%);
+  border-radius: 3px;
+}
+
+.quote-card blockquote{
+  font-size: 26px;
+  min-height: 110px;
+}
+
+.quote-card blockquote::before , .quote-card blockquote::after{
+  content: '"';
+}
+
+.quote-card span{
+  display: block;
+  margin-top: 10px;
+  float:right;
+  position: relative;
+}
+
+.quote-card span::before{
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: #177ce5;
+  position: absolute;
+  top:50%;
+  left: -30px;
+}
+
+.quote-card .btn-quote{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote-card .btn-quote button{
+  background-color: #177ce5;
+  color: #fff;
+  border-radius: 25px;
+  border: 1px solid #177ce5;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.quote-card .timer{
+  position: absolute;
+  top:20px;
+  right: 20px;
+  text-align: center;
+  color: #177ce5;
+  font-size: 21px;
+}

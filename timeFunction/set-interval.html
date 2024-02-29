@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .background{
+      height: 100vh;
+      background-color: #a49d9d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #res{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #3b598e;
+      border: 5px solid orange;
+      font-size: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <section class="background">
+    <div id="res"></div>
+  </section>
+</body>
+<script>
+  var i=0;
+  var res = document.querySelector('#res');
+
+  var cl = setInterval(()=>{
+    if(i==10){
+      clearInterval(cl);
+    }
+    res.innerHTML = i;
+    i++;
+  },100);
+</script>
+</html>

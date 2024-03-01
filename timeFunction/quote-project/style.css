@@ -47,6 +47,7 @@ body{
 
 .quote-card blockquote::before , .quote-card blockquote::after{
   content: '"';
+  font-size: 26px;
 }
 
 .quote-card span{

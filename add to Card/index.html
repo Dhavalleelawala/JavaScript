@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="icon" href="img/process.png" type="icon/png">
+  <title>Employee DataBase</title>
   <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-
+  <style>
+    .hide{
+      display: none;
+    }
+    .heading{
+      text-align: center;
+      font-size: 36px;
+      margin: 20px 0;
+      background-color: #fff;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  </style>
 </head>
 <body>
   
-<h2>Employee CRUD DataBase</h2>
+<h2 class="heading">Employee CRUD DataBase</h2>
   <table class="table table-striped">
     <tbody>
-      <tr>
-        <th scope="col">E id</th>
-        <td><input type="text" id="eid"></td>
-      </tr>
       <tr>
         <th scope="col">E Name</th>
         <td><input type="text" id="ename"></td>
@@ -30,7 +37,10 @@
         <td><input type="text" id="salary"></td>
       </tr>
       <tr>
-        <td colspan="2"><input type="submit" id="submit" value="Add Data" class="btn btn-success" onclick="return showData()"/></td>
+        <td colspan="2">
+          <input type="submit" id="add-data" value="Add Data" class="btn btn-success " onclick="return addData()"/>
+          <input type="submit" id="update" value="Update" class="btn btn-primary hide" onclick="return updateData()"/>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -41,25 +51,101 @@
 
   <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
   <script>
+    var emp = [];
     var createTable;
-    function showData(){
-      createTable = `
-      <table class="table table-striped mt-5">
-    <tbody>
+    var obj;
+    
+    function addData(){
+      var ename = document.getElementById('ename').value;
+      var dpt = document.getElementById('dpt').value;
+      var salary = document.getElementById('salary').value;
+
+    if(!ename=='' && !dpt=='' || !salary==''){
+      obj = {
+      eid: Math.round(Math.random()*1000),
+      ename: ename,
+      dpt: dpt,
+      salary: salary
+    }
+    emp.push(obj);  
+    }  
+
+    
+    localStorage.setItem('employee',JSON.stringify(emp));
+    
+    showData();
+    clearData();  
+  }
+
+  function clearData(){
+    document.getElementById('ename').value='';
+    document.getElementById('dpt').value='';
+    document.getElementById('salary').value='';
+    document.getElementById('ename').focus();
+  }
+
+  function showData(){
+    var dataD = JSON.parse(localStorage.getItem('employee'));
+    emp=dataD?dataD:[];
+    createTable = `
+      <table class="table table-striped mt-5"><tbody>
       <tr>
         <th scope="col">E id</th>
         <th scope="col">E Name</th>
         <th scope="col">Department</th>
         <th scope="col">Salary</th>
+        <th scope="col">Action</th>
       </tr>
-    </tbody>`
+    `
+    emp.forEach((v,i)=>{
+      createTable += `<tr>`;
+      createTable += `<td>${emp[i].eid}</td>`;
+      createTable += `<td>${emp[i].ename}</td>`;
+      createTable += `<td>${emp[i].dpt}</td>`;
+      createTable += `<td>${emp[i].salary}</td>`;
+      createTable += `<td><a href="javascript:deleteData(${v.eid})" class="btn btn-danger">Delete</a> <a href="javascript:editData(${v.eid})" class="btn btn-warning">Edit</a></td>`;
+      createTable += `<tr>`;
 
+    });
+
+    createTable += `</tbody>`;
     createTable += `</table>`; 
-    
-    document.getElementById('res').value = createTable;
+    document.getElementById('res').innerHTML = createTable;
   }
+
+  function deleteData(eid){  
+    let pos = emp.findIndex((v,i)=>v.eid==eid);
+        if(pos != -1){
+            emp.splice(pos,1);
+    }
+    localStorage.setItem('employee',JSON.stringify(emp));
+    showData();
+  }
+  var pos;
+  function editData(eid){
+    pos = emp.findIndex((v,i)=>v.eid==eid);
+    document.getElementById('ename').value= emp[pos].ename;
+    document.getElementById('dpt').value=emp[pos].dpt;
+    document.getElementById('salary').value=emp[pos].salary;
+
+    document.getElementById('update').classList.remove('hide');
+    document.getElementById('add-data').classList.add('hide');
+  }
+
+  function updateData(){
+    emp[pos].ename=document.getElementById('ename').value;
+    emp[pos].dpt=document.getElementById('dpt').value;
+    emp[pos].salary=document.getElementById('salary').value; 
+    
+    localStorage.setItem('employee',JSON.stringify(emp));
+    document.getElementById('update').classList.add('hide');
+    document.getElementById('add-data').classList.remove('hide');
+    showData();
+    clearData();
+    alert("Data Update Success fully.");
+  }
+
   showData();
-  console.log(createTable);
   </script>
 </body>
 </html>

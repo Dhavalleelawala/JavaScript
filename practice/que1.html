@@ -1,0 +1,26 @@
+<script>
+  //1. Create a JavaScript function to check if a number is prime or non-prime.
+
+  let num = parseInt(prompt("Enter number to check is prime or not: "));
+  let count=0;
+  const findPrime = (num)=>{
+
+    for(i=1;i<=num;i++){
+      if(num%i==0){
+        count++;
+      }
+      if(count>2){
+        break;
+      }
+    }
+    if(count==2){
+        console.log(num+" is Prime Number.");
+      }else{
+        console.log(num+" is Not a Prime Number.");
+      }
+
+  }
+
+  findPrime(num);
+
+</script>

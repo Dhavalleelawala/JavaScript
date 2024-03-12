@@ -1,7 +1,8 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+:root{
+  --them-blue-900: #0A1D56;
+  --them-blue-500: #37B5B6;
+  --them-light-color: #F2F597;
 }
 
 .background{
@@ -13,34 +14,34 @@
 }
 
 .to-do-app{
-  background-color: #fff;
+  background-color: var(--them-light-color);
   padding: 40px;
   border-radius: 20px;
   width: 400px;
 }
 
 .to-do-app .add-text {
-  position: relative;
-  overflow: hidden;
   margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: var(--them-blue-500);
+  
 }
 
-.to-do-app .add-text h2{
+.to-do-app h2{
   text-align: center;
   font-size: 32px;
   margin-bottom: 20px;
+  color: var(--them-blue-900);
 }
 
 .to-do-app .add-text #text{
-  width: 100%;
-  height: 30px;
   color: #fff;
   font-size: 18px;
-  background-color: #999;
+  background-color: transparent;
   border: none;
   outline: none;
-  border-radius: 20px;
-  padding: 10px;
   
 }
 
@@ -59,14 +60,9 @@ input[type="checkbox"]{
 
 
 .to-do-app .add-text #add-task{
-  position: absolute;
-  top:0;
-  right: 0px;
-  width:100px;
-  height:30px;
   border-radius: 20px;
-  border: none;
-  outline: none;
+  height: 50px;
+  width: 120px;
 }
 
 .completed {

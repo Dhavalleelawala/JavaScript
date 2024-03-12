@@ -1,0 +1,68 @@
+
+
+#res li{
+  display: flex;
+  align-items: center;    
+}
+#res td span{
+  margin: 0 20px;
+}
+.toggle{
+  display: none;
+}
+
+.background{
+  height: 100vh;
+  background:linear-gradient(90deg, #60aa64,#618dcb);
+}
+
+.todo-card{
+  height: 500px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  opacity: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.todo-card h2{
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Times, serif;
+}
+
+.todo-card #res{
+  min-width: 500px;
+  max-height: 250px;
+  overflow-y: scroll;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+#res::-webkit-scrollbar { 
+  width: 7px; 
+} 
+
+#res::-webkit-scrollbar-track { 
+  background: #f1f1f1; 
+} 
+
+#res::-webkit-scrollbar-thumb { 
+  background: #3a5174; 
+  border-radius: 5px;
+} 
+
+#res::-webkit-scrollbar-thumb:hover { 
+  background: #555; 
+} 
+
+#res::-webkit-scrollbar-button { 
+  display: none; 
+} 

@@ -7,6 +7,7 @@ function searchWeather() {
       .then(response => response.json())
       .then(data => {
           displayWeather(data);
+          console.log(data);
       })
       .catch(error => {
           console.log('Error fetching weather data:', error);

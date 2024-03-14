@@ -30,4 +30,6 @@ function storData(){
   product = dataBase;
 }
 
+storData();
+
 

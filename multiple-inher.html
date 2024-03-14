@@ -1,0 +1,43 @@
+<script>
+  class Student{
+    details()
+    {
+      this.rollno = 21;
+      this.name = "Dhaval";
+    }
+  }
+  class Marks extends Student{
+    marks()
+    {
+      this.details();
+      this.sub1 = 65;
+      this.sub2 = 85;
+      this.sub3 = 80;
+    }
+  }
+  class Reult extends Marks
+  {
+    result()
+    {
+      this.marks();
+      this.total = this.sub1 + this.sub2 + this.sub3;
+      this.average = this.total/3;
+    }
+  }
+  class Display extends Reult
+  {
+    display()
+    {
+      this.result();
+      console.log("Roll No is: "+this.rollno);
+      console.log("Name is: "+this.name);
+      console.log("Sub1 marks: "+this.sub1);
+      console.log("Sub2 marks: "+this.sub2);
+      console.log("Sub3 marks: "+this.sub3);
+      console.log("Total: "+this.total);
+      console.log("Average: "+this.average.toFixed(2));
+    }
+  }
+  var d = new Display();
+  d.display();
+</script>

@@ -1,0 +1,12 @@
+<script>
+  try{
+    
+    
+    throw new ReferenceError("Hello is referenceError");
+  }catch(error){
+    console.log(error.name);
+    console.log(error.message);
+  }finally{
+    console.log("hello user..");
+  }
+</script>

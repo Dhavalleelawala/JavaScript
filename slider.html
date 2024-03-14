@@ -1,0 +1,107 @@
+ <section class="slider">
+  <div id="res" style="background-image: url('img/2.jpg');">
+    <h2 id="sname"></h2>
+    <h2 id="age"></h2>
+    <button id="prev" onclick="return getdata()">prev</button>
+    <button id="next" onclick="return getdata()">next</button>
+  </div>
+ </section>
+ <script>
+  var stud=[
+    {
+      name:"Dhaval",
+      age:23,
+      color:"aqua",
+      bgimg:"img/5.jpg"
+    },
+    {
+      name:"Kunal",
+      age:24,
+      color:"purple",
+      bgimg:"img/2.jpg"
+    },
+    {
+      name:"Rakul",
+      age:21,
+      color:"grey",
+      bgimg:"img/3.jpg"
+    },
+    {
+      name:"Sunil",
+      age:19,
+      color:"skyblue",
+      bgimg:"img/4.jpg"
+    },
+  ];
+  var res = document.getElementById("res");
+  var sname = document.getElementById("sname");
+  var age = document.getElementById("age");
+  i=0;
+  function getdata()
+  {
+    if(i==stud.length){
+      i=0;
+    }
+    // res.style.backgroundColor = stud[i]['color'];
+    res.style.backgroundImage = `url(${stud[i]['bgimg']})`;
+    sname.innerHTML = stud[i]['name'];
+    age.innerHTML = stud[i]['age'];
+    i++;
+  }
+ </script>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .slider{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccffe2;
+  }
+  .slider #res{
+    width: 80%;
+    height: 600px;
+    background: #9a9595;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .7s linear;
+  }
+
+  .slider #res #sname{
+    font-size: 56px;
+    color: #00b6aa;
+  }
+
+  .slider #res #age{
+    color:rgb(0, 89, 167);
+    font-size: 36px;
+  }
+
+  #prev{
+    position: absolute;
+    top:50%;
+    left: -100px;
+    background-color: #8484f3;
+    padding: 10px 20px;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  #next{
+    position: absolute;
+    top:50%;
+    right: -100px;
+    background-color: #8484f3;
+    padding: 10px 20px;
+    font-size: 21px;
+    font-weight: bold;
+  }
+</style>

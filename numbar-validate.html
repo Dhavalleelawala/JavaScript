@@ -1,0 +1,14 @@
+<input type="text" id="number" onkeypress="return valideNumber(event)">
+
+<script>
+
+  function valideNumber(e){
+    var val = document.getElementById('number');
+    console.log(e.which);
+    if(e.which>=65 && e.which<=90 || e.which>=97 && e.which<=122)
+    {
+      return false;
+    }
+  }
+
+</script>

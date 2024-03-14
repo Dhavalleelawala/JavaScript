@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.btn-top{
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  background-color: aquamarine;
+  display: inline-block;
+  padding: 15px;
+  border:3px solid green;
+  text-decoration: none;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.ri-arrow-up-line{
+  color: black;
+  font-size: 26px;
+}
+.btn-progres{
+  background-color: #000000;
+  width:60px;
+  height: 60px;;
+  position: fixed;
+  top:20px;
+  right:50px;
+  color:white;
+  font-size: 16px;
+  border-radius: 50%;
+}
+#progres-bar{
+  background-color: red;
+  height: 10px;
+  width: 0;
+  position: fixed;
+  top:0;
+
+}

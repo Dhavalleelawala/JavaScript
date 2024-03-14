@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="res"></div>
+</body>
+<script>
+  var nameData = ["Dhaval", "Patham", "Rohit", "Pratik"];
+  var res = document.querySelector('#res');
+  var data = '';
+
+  setTimeout(()=>{
+    showData();
+      setTimeout(()=>{
+        showData();
+          setTimeout(()=>{
+          showData();
+          },1000);
+      },1000);
+  },1000);
+
+  var i=0;
+  function showData(){
+    data = nameData[i];
+    res.innerHTML = data;
+    i++;
+  }
+
+</script>
+</html>

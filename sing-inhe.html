@@ -1,0 +1,48 @@
+
+  <!-- Inheritence: one class property (variable && functions) can inherite to another class
+   code repeate 
+   code resuable
+
+   extends keyword
+
+   how many types of inheritence:
+
+   1. single Inheritence
+   2. multilevel
+   3. multiple (specialization, generilization)
+   4. Heirachical
+   5. Hybrid
+    -->
+<script>
+  class Student{
+    details()
+    {
+      this.rollno = 21;
+      this.name = 'Krishna';
+    }
+  }
+  class Marks extends Student{
+    getMarks()
+    {
+        this.english = 67;
+        this.sci = 78;
+        this.maths = 76;
+        this.total = this.english + this.sci + this.maths;
+        this.average = this.total/3;
+    }
+    display()
+    {
+      console.log("Roll No: "+this.rollno);
+      console.log("Name: "+this.name);
+      console.log("english marks: "+this.english);
+      console.log("Science marks: "+this.sci);
+      console.log("Maths marks: "+this.maths);
+      console.log("Total: "+this.total);
+      console.log("Average: "+this.average.toFixed(2));
+    }
+  }
+  var s = new Marks();
+  s.details();
+  s.getMarks();
+  s.display();
+</script>

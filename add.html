@@ -1,0 +1,89 @@
+<table border="1" align="center">
+    <tr>
+        <td>Enter Name</td>
+        <td><input type="text" id="name" /></td>
+    </tr>
+
+    <tr>
+        <td>Enter Age</td>
+        <td><input type="text" id="age" /></td>
+    </tr>
+
+    <tr>
+        <td>Enter Designation</td>
+        <td><input type="text" id="designation" /></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="submit" id="submit" value="Add" onclick="return addData()"/></td>
+    </tr>
+</table>
+<br/><br/>
+
+<div id="res"></div>
+<script>
+    var emp = [];
+
+    function addData(){
+        var name = document.getElementById('name').value;
+        var age = document.getElementById('age').value;
+        var designation = document.getElementById('designation').value;
+        var obj = {
+            name : name,
+            age : age,
+            designation : designation,
+            id : Math.round(Math.random()*1000)
+        }
+        emp.push(obj);
+        
+     
+      
+
+        localStorage.setItem('employee',JSON.stringify(emp))
+
+
+        showData();
+         document.getElementById('name').value=''
+         document.getElementById('age').value=''
+        document.getElementById('designation').value=''
+
+    }
+
+    function showData()
+    {
+        let dataD = JSON.parse(localStorage.getItem('employee'));
+        emp=dataD?dataD:[];
+        var tableData = '<table border="1" align="center"><tr><td>Name</td><td>age</td><td>Designation</td><td>Action</td></tr>';
+        emp.forEach((v,i)=>{
+            tableData +=   "<tr>"
+            tableData +=   `<td>${v.name}</td>`
+            tableData +=   `<td>${v.age}</td>`
+            tableData +=   `<td>${v.designation}</td>`
+            tableData +=   `<td><a href="javascript:deleteData('${v.name}',${v.id})">Delete</a></td>`
+            tableData +=   "</tr>"
+        })   
+        tableData +=   "</table>"
+        document.getElementById('res').innerHTML = tableData;
+    }
+
+    function deleteData(name,id){
+        let pos = emp.findIndex((v,i)=>v.id==id);
+        if(pos != -1){
+            emp.splice(pos,1);
+        }
+
+        localStorage.setItem('employee',JSON.stringify(emp))
+        showData();
+    }
+
+    showData();
+       
+    
+
+       
+
+
+
+
+</script>

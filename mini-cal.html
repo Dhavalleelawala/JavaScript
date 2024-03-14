@@ -1,0 +1,39 @@
+Enter value 1: <input type="text" id="val1"> <br/><br/>
+Enter value 2: <input type="text" id="val2"> <br/><br/>
+
+<input type="submit" value="add" id="add">
+<input type="submit" value="sub" id="sub">
+<input type="submit" value="mul" id="mul">
+<input type="submit" value="div" id="div">
+<br/><br/>
+
+<input type="submit" value="ans" id="ans" onclick="return calData()">
+
+<script>
+
+  function calData(){
+    var data = document.getElementById("add").value;
+    var data1 = document.getElementById("sub").value;
+    var data2 = document.getElementById("mul").value;
+    var data3 = document.getElementById("div").value;
+    console.log(data);
+    
+    if(data=="add"){
+      console.log("hello..");
+    }
+    else if(data=="sub"){
+      console.log("BYE");
+    }
+
+  }
+
+</script>
+
+
+<style>
+  button{
+    font-size: 21px;
+    background-color: #fff;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,13 @@
+<script>
+  var prices = [250,645,300,900,50];
+  var dis;
+  console.log("prices: "+prices);
+  for(var i=0;i<prices.length;i++){
+    // console.log(prices[i]);
+    dis=prices[i]*10/100;
+    prices[i]-=dis;
+  }
+
+  console.log("new prices: "+prices);
+
+</script>

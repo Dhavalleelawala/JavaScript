@@ -1,0 +1,80 @@
+Enter Roll no: <input type="text" id="rollno"> <br><br>
+Enter Name: <input type="text" id="name"> <br> <br>
+Enter sub1: <input type="text" id="s1"> <br> <br>
+Enter sub2: <input type="text" id="s2"> <br> <br>
+Enter sub3: <input type="text" id="s3"> <br> <br>
+<button type="submit" onclick="return getinput()">Submit</button>
+<script>
+function getinput()
+{
+  class Student{
+    getdata(r,n)
+    {
+      this.rollno = r;
+      this.name = n;      
+    }
+    getmarks(s1,s2,s3)
+    {
+      this.sub1 = s1;
+      this.sub2 = s2;
+      this.sub3 = s3;
+    }
+
+    showdata()
+    {
+      this.total = this.sub1 + this.sub2 + this.sub3;
+      this.average = this.total/3;
+      console.log("Roll No: "+this.rollno);
+      console.log("Name: "+this.name);
+      console.log("sub1 marks: "+this.sub1);
+      console.log("sub2 marks: "+this.sub2);
+      console.log("sub3 marks: "+this.sub3);
+      console.log("Total: "+this.total);
+      console.log("Average: "+this.average.toFixed(2));
+    }
+    findGrade()
+    {
+      if(this.sub1>=35 && this.sub2>=35 && this.sub3>=35)
+      {
+        console.log("Pass");
+        if(this.average<=100 && this.average>=80)
+        {
+            console.log("Grade A");
+        }
+        else if(this.average>=60)
+        {
+            console.log("Grade B");
+        }
+        else if(this.average>=50)
+        {
+            console.log("Grade C");
+        }
+        else if(this.average>=35)
+        {
+          console.log("Pass Class");
+        }
+        else
+        {
+          console.log("Someting Wrong!");
+        }
+      }
+      else
+      {
+        console.log("Fail");
+      }
+    }
+  }
+
+
+  var s = new Student();
+  var r = document.getElementById("rollno").value;
+  var n = document.getElementById("name").value;
+  var s1 = parseInt(document.getElementById("s1").value);
+  var s2 = parseInt(document.getElementById("s2").value);
+  var s3 = parseInt(document.getElementById("s3").value);
+  s.getdata(r,n);
+  s.getmarks(s1,s2,s3);
+  s.showdata();
+  s.findGrade();
+}
+</script>

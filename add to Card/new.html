@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Database</title>
+  <style>
+    .heading {
+      text-align: center;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="heading">Employee CRUD Database</h2>
+  <div id="employees">
+    <div>
+      <label for="ename">Employee Name:</label>
+      <input type="text" id="ename">
+    </div>
+    <div>
+      <label for="dpt">Department:</label>
+      <input type="text" id="dpt">
+    </div>
+    <div>
+      <label for="salary">Salary:</label>
+      <input type="text" id="salary">
+    </div>
+    <div>
+      <button onclick="addEmployee()">Add Employee</button>
+    </div>
+  </div>
+
+  <div id="employeeList"></div>
+
+  <script>
+    let employees = [];
+
+    function addEmployee() {
+      const ename = document.getElementById('ename').value;
+      const dpt = document.getElementById('dpt').value;
+      const salary = document.getElementById('salary').value;
+
+      if (ename && dpt && salary) {
+        const employee = {
+          id: Date.now(),
+          ename,
+          dpt,
+          salary
+        };
+        employees.push(employee);
+        showEmployees();
+        clearInputs();
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+
+    function showEmployees() {
+      const employeeList = document.getElementById('employeeList');
+      employeeList.innerHTML = '';
+      employees.forEach(employee => {
+        const employeeDiv = document.createElement('div');
+        employeeDiv.innerHTML = `
+          <p>ID: ${employee.id}</p>
+          <p>Name: ${employee.ename}</p>
+          <p>Department: ${employee.dpt}</p>
+          <p>Salary: ${employee.salary}</p>
+          <button onclick="deleteEmployee(${employee.id})">Delete</button>
+          <button onclick="editEmployee(${employee.id})">Edit</button>
+        `;
+        employeeList.appendChild(employeeDiv);
+      });
+    }
+
+    function clearInputs() {
+      document.getElementById('ename').value = '';
+      document.getElementById('dpt').value = '';
+      document.getElementById('salary').value = '';
+      document.getElementById('ename').focus();
+    }
+
+    function deleteEmployee(id) {
+      employees = employees.filter(employee => employee.id !== id);
+      showEmployees();
+    }
+
+    function editEmployee(id) {
+      const employee = employees.find(employee => employee.id === id);
+      document.getElementById('ename').value = employee.ename;
+      document.getElementById('dpt').value = employee.dpt;
+      document.getElementById('salary').value = employee.salary;
+      deleteEmployee(id);
+    }
+  </script>
+</body>
+</html>

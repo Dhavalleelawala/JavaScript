@@ -1,0 +1,65 @@
+Enter a: <input type="text" id="a"> <br/><br/>
+Enter b: <input type="text" id="b"> <br/><br/>
+Enter c: <input type="text" id="c"> <br/><br/>
+Enter d: <input type="text" id="d"> <br/><br/>
+
+<input type="submit" value="submit" onclick="return maxData()">
+<script>
+  function maxData(){
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+    var c = parseInt(document.getElementById("c").value);
+    var d = parseInt(document.getElementById("d").value);
+
+    if(a>b)
+    {
+      if(a>c)
+      {
+        if(a>d)
+        {
+          console.log("a is max "+a);
+        }
+        else
+        {
+          console.log("d is max "+d);
+        }
+      }
+      else
+      {
+        if(c>d)
+        {
+          console.log("c is max "+c);
+        }else
+        {
+          console.log("d is max "+d);
+        }
+      }
+    }
+    else
+    {
+      if(b>c)
+      {
+        if(b>d)
+        {
+          console.log("b is max "+b);
+        }
+        else
+        {
+          console.log("d is max "+d);
+        }
+
+      }else
+      {
+        if(c>d)
+        {
+          console.log("c is max "+c);
+        }
+        else
+        {
+          console.log("d is max "+d);
+        }
+      }
+    }
+    console.log("hello");
+  }
+</script>

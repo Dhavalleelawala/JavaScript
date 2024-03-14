@@ -1,0 +1,45 @@
+Enter a: <input type="text" id="a"/> <br/><br/>
+Enter b: <input type="text" id="b"/>  <br/><br/>
+<input type="submit" value="Addition" onclick="return add()">
+<input type="submit" value="Subtraction" onclick="return sub()">
+<input type="submit" value="Division" onclick="return div()">
+<input type="submit" value="Multiplication" onclick="return mul()">
+
+<h2 id="result"></h2>
+
+<script>
+  
+  function add(){
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+  
+    var ans=a+b;
+    // console.log("ans is:",ans);
+    document.getElementById("result").innerHTML = "Ans is: "+ans;
+  }
+  function sub(){
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+  
+    var ans=a-b;
+    // console.log("ans is:",ans);
+    document.getElementById("result").innerHTML = "Ans is: "+ans;
+  }
+  function div(){
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+  
+    var ans=a/b;
+    // console.log("ans is:",ans);
+    document.getElementById("result").innerHTML = "Ans is: "+ans;
+  }
+  function mul(){
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+  
+    var ans=a*b;
+    // console.log("ans is:",ans);
+    document.getElementById("result").innerHTML = "Ans is: "+ans;
+  }
+
+</script>

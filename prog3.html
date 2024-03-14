@@ -1,0 +1,37 @@
+<h1>JavaScript Operators</h1>
+<h2>The ?? Operator</h2>
+<p>The ?? operator returns the first argument if it is not nullish (null or undefined). Otherwise it returns the second.
+</p>
+
+<p id="demo"></p>
+
+<script>
+  // Operators
+
+  /*
+  1) Arithmetic Operators
+    +, -, *, /, %
+    5%2 = 1
+    5/2 = 2.5
+
+  2) Assignment Operators
+    (=)
+    a = 5*3-4+5
+
+  3) Comparison Operators
+    >, <, >=, <=, !=, ===, !==
+
+  4) Logical Operators
+    &&, ||, !
+
+    String Operators
+    Logical Operators
+    Bitwise Operators
+    Ternary Operators
+    Type Operators
+  */
+  let name = null;
+let text = "1null";
+let result = name ?? text;
+document.getElementById("demo").innerHTML = "The name is " + result; 
+</script>

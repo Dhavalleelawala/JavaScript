@@ -1,7 +1,10 @@
 let product = [];
+<<<<<<< HEAD
 let table1 = document.querySelector("#table1");
 let table2 = document.querySelector("#table2");
 
+=======
+>>>>>>> e58a17bd28004f2a9b7e34a600fba89333d9ef89
 
 let title = document.querySelector("#title");
 let category = document.querySelector("#category");
@@ -12,13 +15,20 @@ let description = document.querySelector("#description");
 let img = document.querySelector("#imgfile");
 
 function addProduct(){
+<<<<<<< HEAD
   table1.classList.remove("d-none");
   table2.classList.add("d-none");
+=======
+>>>>>>> e58a17bd28004f2a9b7e34a600fba89333d9ef89
   
   let obj = {
     title : title.value,
     category : category.value,
+<<<<<<< HEAD
     price : parseInt(price.value),
+=======
+    price : price.value,
+>>>>>>> e58a17bd28004f2a9b7e34a600fba89333d9ef89
     oldprice : oldprice.value,
     color : color.value,
     description : description.value,
@@ -28,7 +38,10 @@ function addProduct(){
   product.push(obj);
   localStorage.setItem('product',JSON.stringify(product));
   storData();
+<<<<<<< HEAD
   
+=======
+>>>>>>> e58a17bd28004f2a9b7e34a600fba89333d9ef89
 }
 
 function storData(){
@@ -36,6 +49,7 @@ function storData(){
   product = dataBase;
 }
 
+<<<<<<< HEAD
 storData();
 
 
@@ -75,3 +89,6 @@ function allData(){
   table1.classList.add("d-none");
   table2.classList.remove("d-none");
 }
+=======
+
+>>>>>>> e58a17bd28004f2a9b7e34a600fba89333d9ef89

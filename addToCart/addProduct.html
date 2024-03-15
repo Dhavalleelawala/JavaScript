@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Product</title>
   <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" type="text/css">
+
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="me-5 ms-auto">
-          <button class="btn btn-outline-success" type="submit">view</button>
-        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" onclick="addProduct()">Add Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="allData()">Product All Data</a>
+          </li>
+        </ul>
+        <a href="home.html" class="btn btn-outline-success">Home</a>
       </div>
     </div>
   </nav>
-  <h2 style="text-align: center;" class="my-3">Add Product Details</h2>
-  <form>
-    <table cellpadding="5" class="table">
+
+
+  <h2 style="text-align: center;" class="my-3" id="title2">Product Details</h2>
+  <form id="form">
+    <table class="table" id="table1">
       <tr>
         <th>Title: </th>
         <td><input type="text" id="title"></td>
@@ -67,12 +79,25 @@
         <td><input type="file" id="imgfile"></td>
       </tr>
       <tr>
-        <td colspan="2"><input class="btn btn-dark" type="submit" id="submit" onclick="return addProduct()"></td>
+        <td colspan="2">
+          <input class="btn btn-success" type="submit" id="submit" onclick="return addProduct()">
+        </td>
       </tr>
     </table>
   </form>
+  <!-- edit and show data -->
+  <div class="container">
+    <div class="row" >
+      <table class="table d-none" id="table2">
+        <tbody id="res2">
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <script src="js/addProduct.js" type="text/javascript"></script>
   <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </body>
+
 </html>

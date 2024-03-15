@@ -1,0 +1,27 @@
+
+<img src="" alt="" id="imgdata">
+
+
+<script src="js/jquery.min.js"></script>
+<script>
+ getDogImage();
+  setInterval(()=>{
+    getDogImage();
+  },5000);
+
+ function getDogImage(){
+  $.ajax({
+    url : "https://dog.ceo/api/breeds/image/random",
+    method : 'get',
+    success : function(res){
+      console.log(res);
+      if(res.status){
+        console.log(res.message);
+        document.getElementById('imgdata').src = res.message;
+      }
+    }
+  });
+ }
+
+
+</script>
